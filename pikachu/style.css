@@ -1,0 +1,131 @@
+.pikachu {
+  --furr: #ffd523;
+  --shadow: #e19722;
+  --cheek: #e92929;
+  --stripe: #5c3613;
+  --outline: #000000;
+  --black: #000000;
+  --white: #ffffff;
+  --outline-width: 2px;
+  position: relative;
+}
+.pikachu .furr--black {
+  background-color: var(--black);
+  overflow: hidden;
+}
+.pikachu .furr--yellow {
+  background-color: var(--furr);
+  overflow: hidden;
+}
+.pikachu .outline {
+  border: var(--outline-width) solid var(--outline);
+}
+.pikachu .head {
+  position: absolute;
+  padding: 0 50px;
+}
+.pikachu .head .ear {
+  position: absolute;
+}
+.pikachu .head .ear.furr--black {
+  height: 140px;
+  width: 28px;
+  border-radius: 66%/55%;
+  overflow: hidden;
+}
+.pikachu .head .ear.furr--yellow {
+  width: 100px;
+  height: 200px;
+  border-radius: 50% 50% 50% 50%/60% 60% 40% 40%;
+  transform: rotate(10deg);
+  position: relative;
+  right: 18px;
+  top: 25px;
+}
+.pikachu .head .ear .furr--shadow {
+  width: 100px;
+  height: 200px;
+  background: var(--shadow);
+  background: radial-gradient(transparent, transparent 80%, var(--shadow) 80%);
+  background-size: 300% 600%;
+  background-repeat: no-repeat;
+  position: relative;
+}
+.pikachu .head .ear.left {
+  transform: rotate(6deg);
+  left: 45px;
+}
+.pikachu .head .ear.left .furr--shadow {
+  transform: scaleX(-1) scaleY(-1) rotate(-17deg);
+  right: 29px;
+}
+.pikachu .head .ear.right {
+  left: 224px;
+  top: 45px;
+  z-index: 1;
+  transform: rotate(92deg) scaleX(-1);
+}
+.pikachu .head .ear.right .furr--shadow {
+  transform: rotate(-30deg);
+  right: 8px;
+}
+.pikachu .head .ear__joint--right {
+  width: 50px;
+  height: 30px;
+  transform: rotate(20deg);
+  top: 114px;
+  left: 150px;
+  z-index: 2;
+  border-radius: 50%/50%;
+}
+.pikachu .head .ear__joint--left {
+  width: 10px;
+  height: 4px;
+  top: 128px;
+  left: 54px;
+  transform: rotate(-40deg);
+  z-index: 2;
+}
+.pikachu .head .forehead {
+  width: 150px;
+  height: 120px;
+  position: absolute;
+  top: 105px;
+  transform: rotate(-5deg);
+  border-radius: 150px/75px;
+}
+.pikachu .head .eye {
+  height: 28px;
+  width: 27px;
+  border-radius: 50%/50%;
+  background-color: var(--black);
+  position: absolute;
+  z-index: 9;
+}
+.pikachu .head .eye .pupil {
+  height: 12px;
+  width: 11px;
+  border-radius: 50%/50%;
+  background-color: var(--white);
+  position: absolute;
+  top: 4px;
+}
+.pikachu .head .eye.left {
+  top: 165px;
+  left: 70px;
+}
+.pikachu .head .eye.left .pupil {
+  left: 10px;
+}
+.pikachu .head .eye.right {
+  top: 155px;
+  left: 150px;
+}
+.pikachu .head .eye.right .pupil {
+  left: 5px;
+}
+.pikachu .joint {
+  position: absolute;
+}
+
+/*# sourceMappingURL=style.css.map */

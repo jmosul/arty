@@ -1,0 +1,166 @@
+$pikachu-forehead-top: 105px;
+
+@mixin eyeball ($size) {
+  height: $size + 1px;
+  width: $size;
+  border-radius: 50% / 50%;
+}
+
+.pikachu {
+  --furr: #ffd523;
+  --shadow: #e19722;
+  --cheek: #e92929;
+  --stripe: #5c3613;
+  --outline: #000000;
+  --black: #000000;
+  --white: #ffffff;
+  --outline-width: 2px;
+
+  position: relative;
+
+  .furr--black {
+    background-color: var(--black);
+    overflow: hidden;
+  }
+
+  .furr--yellow {
+    background-color: var(--furr);
+    overflow: hidden;
+  }
+
+  .outline {
+    border: var(--outline-width) solid var(--outline);
+  }
+
+  .head {
+    position: absolute;
+    padding: 0 50px;
+
+    .ear {
+      position: absolute;
+
+      &.furr--black {
+        height: 140px;
+        width: 28px;
+
+        border-radius: 66% / 55%;
+        overflow: hidden;
+      }
+
+      &.furr--yellow {
+        width: 100px;
+        height: 200px;
+        border-radius: 50% 50% 50% 50% / 60% 60% 40% 40%;
+        transform: rotate(10deg);
+
+        position: relative;
+        right: 18px;
+        top: 25px;
+      }
+
+      .furr--shadow {
+        width: 100px;
+        height: 200px;
+        background: var(--shadow);
+        background: radial-gradient(transparent, transparent 80%, var(--shadow) 80%);
+        background-size: 300% 600%;
+        background-repeat: no-repeat;
+        position: relative;
+      }
+
+      &.left {
+        transform: rotate(6deg);
+        left: 45px;
+
+        .furr--shadow {
+          transform: scaleX(-1) scaleY(-1) rotate(-17deg);
+          right: 29px;
+        }
+      }
+
+      &.right {
+        left: 224px;
+        top: $pikachu-forehead-top - 60px;
+        z-index: 1;
+        transform: rotate(92deg) scaleX(-1);
+
+        .furr--shadow {
+          transform: rotate(-30deg);
+          right: 8px;
+        }
+      }
+
+      &__joint {
+        &--right {
+          width: 50px;
+          height: 30px;
+          transform: rotate(20deg);
+
+          top: $pikachu-forehead-top + 9px;
+          left: 150px;
+          z-index: 2;
+          border-radius: 50% / 50%;
+        }
+
+        &--left       {
+          width: 10px;
+          height: 4px;
+
+          top: $pikachu-forehead-top + 23px;
+          left: 54px;
+          transform: rotate(-40deg);
+
+          z-index: 2;
+        }
+      }
+    }
+
+    .forehead {
+      width: 150px;
+      height: 120px;
+      position: absolute;
+
+      top: $pikachu-forehead-top;
+      transform: rotate(-5deg);
+
+      border-radius: 150px / 75px;
+    }
+
+    .eye {
+      @include eyeball(27px);
+      background-color: var(--black);
+      position: absolute;
+      z-index: 9;
+
+      .pupil {
+        @include eyeball(11px);
+        background-color: var(--white);
+        position: absolute;
+        top: 4px;
+      }
+
+      &.left {
+        top: 165px;
+        left: 70px;
+
+        .pupil {
+          left: 10px;
+        }
+      }
+
+      &.right {
+        top: 155px;
+        left: 150px;
+
+        .pupil {
+          left: 5px;
+        }
+      }
+    }
+
+  }
+
+  .joint {
+    position: absolute;
+  }
+}
