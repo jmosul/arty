@@ -1,0 +1,7 @@
+@import 'node_modules/CSS-Shapes/mixins';
+
+@mixin egg($height, $width) {
+  height: $height;
+  width: $width;
+  border-radius: 50% 50% 50% 50% / 60% 60% 40% 40%;
+}

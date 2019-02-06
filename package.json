@@ -9,6 +9,7 @@
   "author": "jmosul <jmosul@gmail.com>",
   "license": "ISC",
   "devDependencies": {
+    "CSS-Shapes": "github:ilanbiala/CSS-Shapes",
     "sass": "^1.17.0"
   }
 }
