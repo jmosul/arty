@@ -1,6 +1,10 @@
-$pikachu-forehead-top: 105px;
+@import '../core';
 
-@mixin eyeball ($size) {
+$pikachu-forehead-top: 105px;
+$pikachu-forehead-width: 150px;
+$pikachu-head-left: 50px;
+
+@mixin eyeball($size) {
   height: $size + 1px;
   width: $size;
   border-radius: 50% / 50%;
@@ -9,7 +13,7 @@ $pikachu-forehead-top: 105px;
 .pikachu {
   --furr: #ffd523;
   --shadow: #e19722;
-  --cheek: #e92929;
+  --cheek: #ff0000;
   --stripe: #5c3613;
   --outline: #000000;
   --black: #000000;
@@ -34,7 +38,7 @@ $pikachu-forehead-top: 105px;
 
   .head {
     position: absolute;
-    padding: 0 50px;
+    padding: 0 $pikachu-head-left;
 
     .ear {
       position: absolute;
@@ -48,9 +52,7 @@ $pikachu-forehead-top: 105px;
       }
 
       &.furr--yellow {
-        width: 100px;
-        height: 200px;
-        border-radius: 50% 50% 50% 50% / 60% 60% 40% 40%;
+        @include egg(200px, 100px);
         transform: rotate(10deg);
 
         position: relative;
@@ -102,7 +104,7 @@ $pikachu-forehead-top: 105px;
           border-radius: 50% / 50%;
         }
 
-        &--left       {
+        &--left {
           width: 10px;
           height: 4px;
 
@@ -116,7 +118,7 @@ $pikachu-forehead-top: 105px;
     }
 
     .forehead {
-      width: 150px;
+      width: $pikachu-forehead-width;
       height: 120px;
       position: absolute;
 
@@ -155,6 +157,136 @@ $pikachu-forehead-top: 105px;
         .pupil {
           left: 5px;
         }
+      }
+    }
+
+    .nose {
+      position: absolute;
+      top: 184px;
+      left: 120px;
+      z-index: 9;
+      transform: rotate(-5deg);
+
+      > .top {
+        @include oval(6px, 3px, var(--black))
+      }
+
+      > .bottom {
+        @include chevron(5px, 2px, 20deg, var(--black), up);
+
+        position: relative;
+        top: -2px;
+      }
+    }
+
+    .powerpack {
+      @include eyeball(42px);
+      background-color: var(--cheek);
+      position: absolute;
+    }
+
+    .face {
+      position: absolute;
+      top: 170px;
+      left: $pikachu-head-left;
+
+      > div {
+        position: absolute;
+      }
+
+      .temple {
+        //overflow: hidden;
+        @include rectangle(70px, 20px, var(--furr));
+
+        &.left{
+          border-left: var(--outline-width) solid var(--outline);
+
+          &.top {
+            top: 14px;
+            transform: rotate(3deg);
+            left: 0.5px;
+            z-index: 1;
+          }
+
+          &.bottom {
+            transform: rotate(10deg);
+            top: 25px;
+
+            .powerpack {
+              top: 16px;
+              left: -26px;
+            }
+          }
+        }
+
+        &.right {
+          border-right: var(--outline-width) solid var(--outline);
+
+          &.top {
+            transform: rotate(-10deg);
+            left: 84px;
+            top: -6px;
+          }
+
+          &.bottom {
+            transform: rotate(-15deg);
+            left: 88px;
+            top: 9px;
+            z-index: 1;
+
+            .powerpack {
+              top: 15px;
+              right: -21px;
+            }
+          }
+        }
+      }
+
+      .cheek {
+        @include egg(95px, 60px);
+        overflow: hidden;
+
+        &.left {
+          transform: rotate(130deg);
+          top: 12px;
+          left: 11px;
+          border-left: none;
+
+          .powerpack {
+            bottom: -16px;
+            left: 35px;
+          }
+        }
+
+        &.right {
+          border-right: none;
+          transform: rotate(-150deg);
+          top: 0;
+          left: 94px;
+
+          .powerpack {
+            bottom: -3px;
+            left: -20px;
+          }
+        }
+
+      }
+
+      .chin {
+        width: 75px;
+        height: 14px;
+        border-radius: 66% / 45%;
+
+        top: 85px;
+        left: 50px;
+        transform: rotate(-6deg);
+      }
+
+      .fill__mouth {
+        @include circle(75px, var(--furr));
+        top: 17px;
+        z-index: 0;
+        left: 40px;
       }
     }
 

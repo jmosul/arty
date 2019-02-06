@@ -1,7 +1,7 @@
 .pikachu {
   --furr: #ffd523;
   --shadow: #e19722;
-  --cheek: #e92929;
+  --cheek: #ff0000;
   --stripe: #5c3613;
   --outline: #000000;
   --black: #000000;
@@ -34,8 +34,8 @@
   overflow: hidden;
 }
 .pikachu .head .ear.furr--yellow {
-  width: 100px;
   height: 200px;
+  width: 100px;
   border-radius: 50% 50% 50% 50%/60% 60% 40% 40%;
   transform: rotate(10deg);
   position: relative;
@@ -123,6 +123,152 @@
 }
 .pikachu .head .eye.right .pupil {
   left: 5px;
+}
+.pikachu .head .nose {
+  position: absolute;
+  top: 184px;
+  left: 120px;
+  z-index: 9;
+  transform: rotate(-5deg);
+}
+.pikachu .head .nose > .top {
+  width: 6px;
+  height: 3px;
+  -webkit-border-radius: 6px/3px;
+  -moz-border-radius: 6px/3px;
+  border-radius: 6px/3px;
+  background: var(--black);
+}
+.pikachu .head .nose > .bottom {
+  position: relative;
+  width: 5px;
+  height: 2px;
+  position: relative;
+  top: -2px;
+}
+.pikachu .head .nose > .bottom:before, .pikachu .head .nose > .bottom:after {
+  position: absolute;
+  top: 0;
+  width: 50%;
+  height: 100%;
+  background: var(--black);
+  content: "";
+}
+.pikachu .head .nose > .bottom:before {
+  left: 0;
+  -webkit-transform: skew(0deg, 20deg);
+  -moz-transform: skew(0deg, 20deg);
+  -ms-transform: skew(0deg, 20deg);
+  -o-transform: skew(0deg, 20deg);
+  transform: skew(0deg, 20deg);
+}
+.pikachu .head .nose > .bottom:after {
+  right: 0;
+  -webkit-transform: skew(0deg, -20deg);
+  -moz-transform: skew(0deg, -20deg);
+  -ms-transform: skew(0deg, -20deg);
+  -o-transform: skew(0deg, -20deg);
+  transform: skew(0deg, -20deg);
+}
+.pikachu .head .powerpack {
+  height: 43px;
+  width: 42px;
+  border-radius: 50%/50%;
+  background-color: var(--cheek);
+  position: absolute;
+}
+.pikachu .head .face {
+  position: absolute;
+  top: 170px;
+  left: 50px;
+}
+.pikachu .head .face > div {
+  position: absolute;
+}
+.pikachu .head .face .temple {
+  width: 70px;
+  height: 20px;
+  background: var(--furr);
+}
+.pikachu .head .face .temple.left {
+  border-left: var(--outline-width) solid var(--outline);
+}
+.pikachu .head .face .temple.left.top {
+  top: 14px;
+  transform: rotate(3deg);
+  left: 0.5px;
+  z-index: 1;
+}
+.pikachu .head .face .temple.left.bottom {
+  transform: rotate(10deg);
+  top: 25px;
+}
+.pikachu .head .face .temple.left.bottom .powerpack {
+  top: 16px;
+  left: -26px;
+}
+.pikachu .head .face .temple.right {
+  border-right: var(--outline-width) solid var(--outline);
+}
+.pikachu .head .face .temple.right.top {
+  transform: rotate(-10deg);
+  left: 84px;
+  top: -6px;
+}
+.pikachu .head .face .temple.right.bottom {
+  transform: rotate(-15deg);
+  left: 88px;
+  top: 9px;
+  z-index: 1;
+}
+.pikachu .head .face .temple.right.bottom .powerpack {
+  top: 15px;
+  right: -21px;
+}
+.pikachu .head .face .cheek {
+  height: 95px;
+  width: 60px;
+  border-radius: 50% 50% 50% 50%/60% 60% 40% 40%;
+  overflow: hidden;
+}
+.pikachu .head .face .cheek.left {
+  transform: rotate(130deg);
+  top: 12px;
+  left: 11px;
+  border-left: none;
+}
+.pikachu .head .face .cheek.left .powerpack {
+  bottom: -16px;
+  left: 35px;
+}
+.pikachu .head .face .cheek.right {
+  border-right: none;
+  transform: rotate(-150deg);
+  top: 0;
+  left: 94px;
+}
+.pikachu .head .face .cheek.right .powerpack {
+  bottom: -3px;
+  left: -20px;
+}
+.pikachu .head .face .chin {
+  width: 75px;
+  height: 14px;
+  border-radius: 66%/45%;
+  top: 85px;
+  left: 50px;
+  transform: rotate(-6deg);
+}
+.pikachu .head .face .fill__mouth {
+  width: 75px;
+  height: 75px;
+  background: var(--furr);
+  -webkit-border-radius: 37.5px;
+  -moz-border-radius: 37.5px;
+  border-radius: 37.5px;
+  top: 17px;
+  z-index: 0;
+  left: 40px;
 }
 .pikachu .joint {
   position: absolute;
